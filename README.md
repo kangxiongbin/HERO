@@ -19,3 +19,6 @@ git clone git@github.com:kangxiongbin/HERO.git
 
 ```
 ## Examples
+We recommend first correcting the long reads with fmlrc2 or ratatosk.
+
+Requires the input file to be uncompressed fastq or fasta. The short reads read1 and read2 must be in one file.
