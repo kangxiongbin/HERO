@@ -5,7 +5,7 @@ HERO is a hybrid error correction approach, which utilize short reads to correct
 Please note that StrainXpress is built for linux-based systems and python3 only.
 HERO relies on the following dependencies:
 - [minimap2](https://github.com/lh3/minimap2)
-- [racon](https://github.com/isovic/racon)*
+- [racon](https://github.com/isovic/racon)
 
 To install HERO, firstly, it is recommended to intall the dependencies through [Conda](https://docs.conda.io/en/latest/):
 ```
