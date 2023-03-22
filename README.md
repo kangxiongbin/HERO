@@ -16,13 +16,14 @@ conda install -c bioconda python=3.6 racon minimap2 fmlrc2 ratatosk
 Subsequently, pull down the code to the directory and then you can directly use it:
 ```
 git clone git@github.com:kangxiongbin/HERO.git
-
 ```
 ## Examples
 We recommend first correcting the long reads 3 times with ratatosk or fmlrc2.
 
+```
 Ratatosk correct -v -c 30  -s short_reads.fq -l long_reads.fq -o ratatosk1
 Ratatosk correct -v -c 30  -s short_reads.fq -l ratatosk1.fastq -o ratatosk2
 Ratatosk correct -v -c 30  -s short_reads.fq -l ratatosk2.fastq -o ratatosk3
+```
 
 Requires the input file to be uncompressed fastq or fasta. The short reads read1 and read2 must be in one file.
