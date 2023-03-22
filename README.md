@@ -30,4 +30,5 @@ Then HERO is used to further correct the pre-correct long reads with overlap-lay
 
 ```
 python /folder/HERO/bin/HERO.py -r short_reads.fq -lc ratatosk3.fastq -o corrected_long.fa
+- The result is: final_corrected_long.fa
 ```
