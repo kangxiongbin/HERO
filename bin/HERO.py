@@ -25,14 +25,15 @@ def main():
     parser.add_argument('-i', dest = 'iteration', required=False, type=int, default = 3, help='The number for iterating builds overlap graph to correct target reads/contigs')
     parser.add_argument('-pl', dest = 'platform', required=False, type=str, default = "pb", help='Sequencing platform for long reads: pb/ont')
     parser.add_argument('-t', dest = 'threads', required=False, type=int, default = 30, help='the number of threads')
-    parser.add_argument('-s', dest = 'split_nu', required=False, type=int, default = 10, help='The time for splitting long reads/contigs file to accelerate speed. When the high quality reads file more than 3G, we suggest split long read or contigs excess 30 times.')
+    parser.add_argument('-s', dest = 'split_nu', required=False, type=int, default = 10, help='The time for splitting long reads/contigs file to accelerate speed. When the high quality reads file more than 1G, we suggest split long read or contigs excess 30 times.')
     parser.add_argument('-m', dest = 'mc', required=False, type=int, default = 5, help='The mini coverage to define a SNP')
     parser.add_argument('-hlong_reads', dest = 'hlong_reads', action='store_true', help='When you utilize high quality long reads to correct long reads / contigs, please activate this parameter.')
+    parser.add_argument('-p', dest = 'plus', action='store_true', help='Further correct yourself with the corrected long reads. Don\'t enable this parameter when correct contigs.')
 
     args = parser.parse_args()
 
     if not (args.short_reads and args.long_reads):
-        print("Please enter long reads or contigs which will be corrected and the high quality reads that will be used to correct them.")
+        print("Please enter long reads or contigs which will be corrected by the high quality reads.")
         parser.print_help()
         sys.exit()
 
@@ -41,6 +42,7 @@ def main():
     reads = args.short_reads
     out_con = args.out_con
     threads = args.threads
+    plus = args.plus
     mc = args.mc
     hlong_reads = args.hlong_reads
     split_nu = args.split_nu
@@ -50,18 +52,12 @@ def main():
     k = 0
     while(k < args.iteration):
         k += 1
-        out_con2 = folder + "/" + str(k) + "_" + out_con
+        out_con2 = folder + "/" + out_con
         
         correct(con, reads, out_con2, folder, mc, split_nu, threads, hlong_reads, bin, platform)
         con = out_con2
 
-    out_con2 = folder + "/" + "final_" + out_con
-    
-    if hlong_reads:
-        
-        execute("mv %s %s;" %(con, out_con2))
-        
-    else:
+    if plus:
 
         hlong_reads = True
         reads = os.path.basename(con)
