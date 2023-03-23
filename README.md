@@ -11,7 +11,7 @@ To install HERO, firstly, it is recommended to intall the dependencies through [
 ```
 conda create -n hero
 conda activate hero
-conda install -c bioconda python=3.6 racon minimap2 fmlrc2 ratatosk
+conda install -c bioconda python=3.6 racon minimap2 fmlrc2 ratatosk lordec
 ```
 Subsequently, pull down the code to the directory and then you can directly use it:
 ```
