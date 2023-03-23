@@ -29,6 +29,10 @@ Ratatosk correct -v -c 30  -s short_reads.fq -l ratatosk2.fastq -o ratatosk3
 Then HERO is used to further correct the pre-correct long reads with overlap-layout-consensus (OLC) paradigm. Requires the input file to be uncompressed fastq/fasta. The short reads read1 and read2 must be in one file.
 
 ```
+-Short reads correct long reads
 python /folder/HERO/bin/HERO.py -r short_reads.fq -lc ratatosk3.fastq -p -o corrected_long.fa -s 30
+
+-Long reads correct long reads
+python /folder/HERO/bin/HERO.py -r ratatosk3.fastq -lc ratatosk3.fastq -o corrected_long.fa -i 1 -hlong_reads
 
 ```
