@@ -39,7 +39,7 @@ def main():
 
     bin = os.path.split(os.path.realpath(__file__))[0]
     con = args.long_reads
-    reads = args.short_reads
+    reads = os.path.abspath(args.short_reads)
     out_con = args.out_con
     threads = args.threads
     plus = args.plus
@@ -60,7 +60,8 @@ def main():
     if plus:
 
         hlong_reads = True
-        reads = os.path.basename(con)
+#        reads = os.path.basename(con)
+        reads = con
         correct(con, reads, out_con2, folder, mc, split_nu, threads, hlong_reads, bin, platform)
 
 
@@ -91,10 +92,10 @@ def correct(con, reads, out_con2, folder, mc, split_nu, threads, hlong_reads, bi
     
         if hlong_reads:
 
-            cmd = ["python %s/pre_polish.py -pl %s -r %s/%s -c %s/%s -mc %s -t %s -long_reads " %(bin, platform, folder, reads, folder2, i, mc, th2) for i in sub_overlap2]
+            cmd = ["python %s/pre_polish.py -pl %s -r %s -c %s/%s -mc %s -t %s -long_reads " %(bin, platform, reads, folder2, i, mc, th2) for i in sub_overlap2]
         
         else:
-            cmd = ["python %s/pre_polish.py -r %s/%s -c %s/%s -mc %s -t %s " %(bin, folder, reads, folder2, i, mc, th2) for i in sub_overlap2]
+            cmd = ["python %s/pre_polish.py -r %s -c %s/%s -mc %s -t %s " %(bin, reads, folder2, i, mc, th2) for i in sub_overlap2]
 
         cmd2 = "\n".join(cmd)
         
