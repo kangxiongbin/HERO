@@ -3,6 +3,7 @@ HERO is a hybrid error correction approach that utilizes short reads to correct 
 
 ![overcorrection](https://github.com/kangxiongbin/HERO/assets/23208764/8d334ac1-e0f6-4ce3-b49a-381c70fad6f4)
 
+As shown in the above figure, contigs represent unpolished contigs. The previous approach with Racon was to align short reads to contigs using minimap2 and then generate new consensus contigs with poa to achieve error correction. Similar to Racon, HERO also aligns reads to contigs using minimap2, but HERO utilizes SNP information to filter out short reads originating from other strains/haplotypes first, before calling Racon's POA to generate the consensus contigs. This avoids interference from incorrectly aligned reads. For example at position A, HERO can make the correction, but it will not introduce errors like BCDEFG as Racon does, which increases the mismatch error rates.
 
 ## Installation and dependencies
 Please note that HERO is built for linux-based systems and python3 only.
