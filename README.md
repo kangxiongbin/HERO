@@ -1,5 +1,5 @@
 # HERO
-HERO is a hybrid error correction approach, which utilize short reads to correct long reads. HERO combines the merit of De Bruijn grap (DBG) and overlap graph (OG), but it addresses the shortage of OG by phasing reads with SNPs to avoid misalignment.
+HERO is a hybrid error correction approach that utilizes short reads to correct long reads. HERO combines the merits of the De Bruijn graph (DBG) and overlap graph (OG). However, it addresses the shortage of OG by phasing reads with SNPs to filter out the reads that originate from other strains/haplotypes and avoid overcorrection.
 
 ## Installation and dependencies
 Please note that HERO is built for linux-based systems and python3 only.
