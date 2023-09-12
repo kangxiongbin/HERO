@@ -47,4 +47,4 @@ More examples can be viewed and run on Code Ocean.
 https://codeocean.com/capsule/9666759/tree/v1
 ```
 
-Note: If the files are quite large, for example Illumina files larger than 4G or long read files larger than 2G, it is recommended to split the files into smaller chunks for correction to improve speed. This can be achieved in HERO by setting -s to 200 or larger
+Note: If the reads files are quite large, for example Illumina reads files larger than 5G or long read files larger than 2G, it is recommended to split the files into smaller chunks for correction to improve speed. This can be achieved in HERO by setting -s to 200 or larger
