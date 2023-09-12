@@ -40,7 +40,11 @@ python /folder/HERO/bin/HERO.py -r short_reads.fq -lc ratatosk3.fastq -p -o corr
 python /folder/HERO/bin/HERO.py -r ratatosk3.fastq -lc ratatosk3.fastq -o corrected_long.fa -i 1 -hlong_reads
 
 ```
+
 More examples can be viewed and run on Code Ocean. 
+
 ```
 https://codeocean.com/capsule/9666759/tree/v1
 ```
+
+Note: If the files are quite large, for example Illumina files larger than 4G or long read files larger than 2G, it is recommended to split the files into smaller chunks for correction to improve speed. This can be achieved in HERO by setting -s to 200 or larger
