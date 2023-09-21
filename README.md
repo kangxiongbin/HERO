@@ -1,9 +1,9 @@
 # HERO
-HERO is a hybrid error correction approach that utilizes short reads to correct long reads or polish contigs. HERO combines the merits of the De Bruijn graph (DBG) and overlap graph (OG). However, it addresses the shortage of OG by phasing reads with SNPs to filter out the reads that originate from other strains/haplotypes and avoid overcorrection.
+HERO is a hybrid error correction approach that utilizes short reads to correct long reads. HERO combines the merits of the De Bruijn graph (DBG) and overlap graph (OG). However, it addresses the shortage of OG by phasing reads with SNPs to filter out the reads that originate from other strains/haplotypes and avoid overcorrection.
 
-![overcorrection](https://github.com/kangxiongbin/HERO/assets/23208764/8d334ac1-e0f6-4ce3-b49a-381c70fad6f4)
+[hybrid correction workflow3.pdf](https://github.com/kangxiongbin/HERO/files/12681379/hybrid.correction.workflow3.pdf)
 
-As shown in the above figure, contigs represent unpolished contigs. The previous approach with Racon was to align short reads to contigs using minimap2 and then generate new consensus contigs with poa to achieve error correction. Similar to Racon, HERO also aligns reads to contigs using minimap2, but HERO utilizes SNP information to filter out short reads originating from other strains/haplotypes first, before calling Racon's POA to generate the consensus contigs. This avoids interference from incorrectly aligned reads. For example at position A, HERO can make the correction, but it will not introduce errors like BCDEFG as Racon does, which increases the mismatch error rates.
+The workflow of HERO. Black: long read r to be corrected. Yellow, blue, red: short reads, different colors indicate different haplotypes. Red crosses indicate errors. Tics (here: blue, red) indicate haplotype-specific variants.
 
 ## Installation and dependencies
 Please note that HERO is built for linux-based systems and python3 only.
