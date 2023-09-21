@@ -1,7 +1,8 @@
 # HERO
 HERO is a hybrid error correction approach that utilizes short reads to correct long reads. HERO combines the merits of the De Bruijn graph (DBG) and overlap graph (OG). However, it addresses the shortage of OG by phasing reads with SNPs to filter out the reads that originate from other strains/haplotypes and avoid overcorrection.
 
-[hybrid correction workflow3.pdf](https://github.com/kangxiongbin/HERO/files/12681379/hybrid.correction.workflow3.pdf)
+![1695280203888](https://github.com/kangxiongbin/HERO/assets/23208764/a6cfca07-9830-4c57-99a3-081c1e491de6)
+
 
 The workflow of HERO. Black: long read r to be corrected. Yellow, blue, red: short reads, different colors indicate different haplotypes. Red crosses indicate errors. Tics (here: blue, red) indicate haplotype-specific variants.
 
