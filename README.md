@@ -21,7 +21,8 @@ conda install -c bioconda python=3.6 racon minimap2 ropebwt2 fmlrc2 ratatosk lor
 ```
 Subsequently, pull down the code to the directory and then you can directly use it:
 ```
-git clone git@github.com:kangxiongbin/HERO.git
+git clone https://github.com/kangxiongbin/HERO.git
+
 ```
 ## Examples
 We recommend first correcting the long reads 3 times with DBG approaches such as ratatosk, fmlrc2 and lordec.
