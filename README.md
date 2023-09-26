@@ -9,7 +9,7 @@ The workflow of HERO. Black: long read r to be corrected. Yellow, blue, red: sho
 
 ## Installation and dependencies
 Please note that HERO is built for linux-based systems and python3 only.
-HERO relies on the following dependencies:
+The reads alignment here relies on minimap2, while the POA relies mainly on Racon.
 - [minimap2](https://github.com/lh3/minimap2)
 - [racon](https://github.com/isovic/racon)
 
